@@ -1,17 +1,24 @@
 package br.com.fiap.project.model;
 
+import br.com.fiap.project.view.CategoryView;
+
 import java.util.Objects;
 
-public class Categoria {
+public class Category {
 
+    public br.com.fiap.project.view.CategoryView CategoryView;
     private Long id;
     private String nome;
 
-    public Categoria(){
+    public Category(){
 
     }
 
-    public Categoria(Long id, String nome) {
+    public Category(String nome) {
+        this.nome = nome;
+    }
+
+    public Category(Long id, String nome) {
         this.setId(id);
         this.setNome(nome);
     }
@@ -20,7 +27,7 @@ public class Categoria {
         return id;
     }
 
-    public Categoria setId(Long id) {
+    public Category setId(Long id) {
         this.id = id;
         return this;
     }
@@ -29,7 +36,7 @@ public class Categoria {
         return nome;
     }
 
-    public Categoria setNome(String nome) {
+    public Category setNome(String nome) {
         this.nome = nome;
         return this;
     }
@@ -38,7 +45,7 @@ public class Categoria {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Categoria categoria = (Categoria) o;
+        Category categoria = (Category) o;
         return Objects.equals(nome, categoria.nome);
     }
 

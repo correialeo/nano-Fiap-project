@@ -2,9 +2,9 @@ package br.com.fiap.project.view;
 
 import javax.swing.*;
 
-public class MainOption {
+public class OptionView {
     public static Option select(){
-        Option option = (Option) JOptionPane.showInputDialog(
+        Option ret = (Option) JOptionPane.showInputDialog(
                 null, //componente pai - não temos, entao sera null
                 "Choose one option",
                 "Menu",
@@ -13,7 +13,7 @@ public class MainOption {
                 Option.values(), //n° da opção
                 Option.REGISTER_PRODUCT);
 
-        return option != null ? option : Option.END_SYSTEM;
+        return ret != null ? ret : Option.END_SYSTEM;
 
     }
 }

@@ -1,6 +1,5 @@
 package br.com.fiap.project.model;
 import java.time.LocalDateTime;
-import java.util.Locale;
 import java.util.Objects;
 
 public class Product {
@@ -10,12 +9,12 @@ public class Product {
     private String decricao;
     private double preco;
     private LocalDateTime dataDeCadastro;
-    private Categoria categoria;
+    private Category categoria;
 
     public Product() {
     }
 
-    public Product(Long id, String nome, String decricao, double preco, LocalDateTime dataDeCadastro, Categoria categoria) {
+    public Product(Long id, String nome, String decricao, double preco, LocalDateTime dataDeCadastro, Category categoria) {
         this.setId(id);
         this.setNome(nome);
         this.setDecricao(decricao);
@@ -24,7 +23,7 @@ public class Product {
         this.setCategoria(categoria);
     }
 
-    public Product(String nome, String decricao, double preco, LocalDateTime dataDeCadastro, Categoria categoria) {
+    public Product(String nome, String decricao, double preco, LocalDateTime dataDeCadastro, Category categoria) {
         this.setNome(nome);
         this.setDecricao(decricao);
         this.setPreco(preco);
@@ -77,11 +76,11 @@ public class Product {
         return this;
     }
 
-    public Categoria getCategoria() {
+    public Category getCategoria() {
         return categoria;
     }
 
-    public Product setCategoria(Categoria categoria) {
+    public Product setCategoria(Category categoria) {
         this.categoria = categoria;
         return this;
     }
@@ -91,12 +90,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return id.equals(product.id);
+        return Objects.equals(nome, product.nome);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(nome);
     }
 
     @Override
